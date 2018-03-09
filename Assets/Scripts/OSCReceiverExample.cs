@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OSCReceiverExample : MonoBehaviour
 {
+    public bool ShowDebug;
 
     private OSCMaster oscMaster;
 
@@ -13,7 +14,8 @@ public class OSCReceiverExample : MonoBehaviour
 	    oscMaster = FindObjectOfType<OSCMaster>();
 	    oscMaster.messageAvailable += message =>
 	    {
-	        Debug.Log("Message received : " + message.Address + " " + message.Data);
+            if(ShowDebug)
+	            Debug.Log("Message received : " + message.Address + " " + message.Data);
 	    };
 	}
 	
