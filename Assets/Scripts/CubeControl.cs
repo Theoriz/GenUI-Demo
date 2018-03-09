@@ -70,8 +70,9 @@ public class CubeControl : Controllable
          if(rotate)
             transform.Rotate(Vector3.up, Time.deltaTime * speed);
 
-         //Debug.Log("Nombre (int) : " + nombreInt);
-         //Debug.Log("Nombre (float) : " + nombreFloat);
+        GetComponent<Renderer>().material.color = cubeColor;
+        //Debug.Log("Nombre (int) : " + nombreInt);
+        //Debug.Log("Nombre (float) : " + nombreFloat);
     }
 
     public override void DataLoaded()
