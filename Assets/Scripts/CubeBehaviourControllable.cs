@@ -77,28 +77,4 @@ public class CubeBehaviourControllable : Controllable
         base.DataLoaded();
         MyCubeBehaviour.SetColor(CubeColor);
     }
-
-    //public override void OnScriptValueChanged(string name)
-    //{
-    //    NombreInt = MyCubeBehaviour.NombreInt;
-    //    NombreFloat = MyCubeBehaviour.NombreFloat;
-    //    MyString = MyCubeBehaviour.MyString;
-    //    Rotate = MyCubeBehaviour.Rotate;
-    //    IntSlider = MyCubeBehaviour.IntSlider;
-    //    Speed = MyCubeBehaviour.Speed;
-    //    Pos = MyCubeBehaviour.Pos;
-    //    CubeColor = MyCubeBehaviour.CubeColor;
-    //}
-
-    //public override void OnUiValueChanged(string name)
-    //{
-    //    MyCubeBehaviour.NombreInt = NombreInt;
-    //    MyCubeBehaviour.NombreFloat = NombreFloat;
-    //    MyCubeBehaviour.MyString = MyString;
-    //    MyCubeBehaviour.Rotate = Rotate;
-    //    MyCubeBehaviour.IntSlider = IntSlider;
-    //    MyCubeBehaviour.Speed = Speed;
-    //    MyCubeBehaviour.Pos = Pos;
-    //    MyCubeBehaviour.CubeColor = CubeColor;
-    //}
 }
