@@ -68,6 +68,7 @@ public class CubeBehaviourControllable : Controllable
             Debug.LogWarning("Can't find CubeBehaviour script to control !");
             return;
         }
+
         TargetScript = MyCubeBehaviour;
         base.Awake();
     }
