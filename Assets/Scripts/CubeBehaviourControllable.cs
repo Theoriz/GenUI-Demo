@@ -27,7 +27,7 @@ public class CubeBehaviourControllable : Controllable
     public float Speed;
 
     [OSCProperty]
-    public Vector3 Pos;
+    public Vector3 PositionOffset;
 
     [OSCProperty]
     public Color CubeColor;

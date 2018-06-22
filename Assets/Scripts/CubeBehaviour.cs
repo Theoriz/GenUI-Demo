@@ -16,23 +16,26 @@ public class CubeBehaviour : MonoBehaviour {
 
     public float Speed;
     
-    public Vector3 Pos;
+    public Vector3 PositionOffset;
 
     public Color CubeColor;
 
+    private Vector3 startPosition;
     public void SetColor(Color col)
     {
         CubeColor = col;
         GetComponent<Renderer>().material.color = CubeColor;
     }
 
-    //// Use this for initialization
-    //void Start () {
-    //    GetComponent<Renderer>().material.color = CubeColor;
-    //}
-	
-	// Update is called once per frame
-	void Update () {
+    private void Start()
+    {
+        startPosition = transform.localPosition;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        transform.localPosition = startPosition  + PositionOffset;
+        SetColor(CubeColor);
         if (Rotate)
             transform.Rotate(new Vector3(0, 1, 0) * Speed);
 	}
