@@ -35,6 +35,7 @@ public class CubeBehaviour : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        NombreFloat = Mathf.Sin(Time.time);
         transform.localPosition = startPosition  + PositionOffset;
         SetColor(CubeColor);
         if (Rotate)

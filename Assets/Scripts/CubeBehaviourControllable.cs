@@ -9,7 +9,7 @@ public class CubeBehaviourControllable : Controllable
     [OSCProperty]
     public int NombreInt;
 
-    [OSCProperty]
+    [OSCProperty(isInteractible = false)]
     public float NombreFloat;
 
     [OSCProperty]
