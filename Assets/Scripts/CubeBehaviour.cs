@@ -22,6 +22,7 @@ public class CubeBehaviour : MonoBehaviour {
 
     private Vector3 startPosition;
 
+
     public void SetColor(Color col)
     {
         CubeColor = col;
