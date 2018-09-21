@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CubeBehaviourControllable : Controllable
 {
-    public CubeBehaviour MyCubeBehaviour;
-
+    [Header("Exposed properties")]
     [OSCProperty]
     public int NombreInt;
 
@@ -35,47 +34,24 @@ public class CubeBehaviourControllable : Controllable
     [OSCMethod]
     public void SetColor(Color col)
     {
-        MyCubeBehaviour.SetColor(col);
+        ((CubeBehaviour)TargetScript).SetColor(col);
     }
 
     [OSCMethod]
     public void SetColorRed()
     {
-        MyCubeBehaviour.SetColor(Color.red);
+        ((CubeBehaviour)TargetScript).SetColor(Color.red);
     }
 
     [OSCMethod]
     public void SetColorWhite()
     {
-        MyCubeBehaviour.SetColor(Color.white);
-    }
-
-    public override void Awake()
-    {
-        debug = false;
-        if (MyCubeBehaviour == null)
-        {
-            var scripts = FindObjectsOfType<CubeBehaviour>();
-            if(scripts.Length >=1 )
-                Debug.LogError("Too many CubeBehaviour script, please set the good one manually");
-            if (scripts.Length == 1)
-                MyCubeBehaviour = scripts[0];
-
-        }
-
-        if (MyCubeBehaviour == null)
-        {
-            Debug.LogWarning("Can't find CubeBehaviour script to control !");
-            return;
-        }
-
-        TargetScript = MyCubeBehaviour;
-        base.Awake();
+        ((CubeBehaviour)TargetScript).SetColor(Color.white);
     }
 
     public override void DataLoaded()
     {
         base.DataLoaded();
-        MyCubeBehaviour.SetColor(CubeColor);
+        ((CubeBehaviour)TargetScript).SetColor(CubeColor);
     }
 }
