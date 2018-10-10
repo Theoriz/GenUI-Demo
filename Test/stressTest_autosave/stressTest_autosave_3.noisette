@@ -1,0 +1,1397 @@
+{
+  "metaData": {
+    "version": "1.4.13",
+    "versionNumber": 66573
+  },
+  "moduleManager": {
+    "items": [
+      {
+        "niceName": "OSC",
+        "type": "OSC",
+        "scripts": {
+        },
+        "params": {
+          "containers": {
+            "oscinput": {
+            },
+            "oscoutputs": {
+              "items": [
+                {
+                  "parameters": [
+                    {
+                      "value": 6001,
+                      "controlMode": 0,
+                      "controlAddress": "/remotePort"
+                    }
+                  ],
+                  "niceName": "OSC Output",
+                  "type": "BaseItem"
+                }
+              ]
+            }
+          }
+        },
+        "input": {
+        },
+        "outputs": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 6001,
+                  "controlMode": 0,
+                  "controlAddress": "/remotePort"
+                }
+              ],
+              "niceName": "OSC Output",
+              "type": "BaseItem"
+            }
+          ]
+        },
+        "values": {
+        }
+      },
+      {
+        "niceName": "Signal",
+        "type": "Signal",
+        "scripts": {
+        },
+        "params": {
+        }
+      }
+    ]
+  },
+  "stateManager": {
+    "items": [
+      {
+        "parameters": [
+          {
+            "value": true,
+            "controlMode": 0,
+            "controlAddress": "/enabled"
+          },
+          {
+            "value": [
+              -202.5,
+              -20.5
+            ],
+            "controlMode": 0,
+            "controlAddress": "/viewUIPosition"
+          },
+          {
+            "value": [
+              321.0,
+              411.0
+            ],
+            "controlMode": 0,
+            "controlAddress": "/viewUISize"
+          },
+          {
+            "value": true,
+            "controlMode": 0,
+            "controlAddress": "/active"
+          }
+        ],
+        "niceName": "CubeBehaviour-correct",
+        "type": "State",
+        "processors": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 0.26970714330673217773,
+                  "controlMode": 0,
+                  "controlAddress": "/outValue"
+                }
+              ],
+              "niceName": "NombreInt",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "input": {
+                "parameters": [
+                  {
+                    "value": "/modules/signal/values/value",
+                    "controlMode": 0,
+                    "controlAddress": "/inputValue"
+                  }
+                ]
+              },
+              "filters": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.26970714330673217773,
+                        "controlMode": 0,
+                        "controlAddress": "/out"
+                      }
+                    ],
+                    "niceName": "Remap",
+                    "type": "Remap",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": [
+                            0.0,
+                            1.0
+                          ],
+                          "controlMode": 0,
+                          "controlAddress": "/inputMin_Max"
+                        },
+                        {
+                          "value": [
+                            0.0,
+                            10.0
+                          ],
+                          "controlMode": 0,
+                          "controlAddress": "/targetMin_Max"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/NombreInt",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": 0.26970714330673217773,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              },
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Float",
+                            "param": {
+                              "value": 0.26970714330673217773,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/nombreInt/outputs/mappingOutput/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 0.02697071433067321777,
+                  "controlMode": 0,
+                  "controlAddress": "/outValue"
+                }
+              ],
+              "niceName": "NombreFloat",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "input": {
+                "parameters": [
+                  {
+                    "value": "/modules/signal/values/value",
+                    "controlMode": 0,
+                    "controlAddress": "/inputValue"
+                  }
+                ]
+              },
+              "filters": {
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/NombreFloat",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": 0.02697071433067321777,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              },
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Float",
+                            "param": {
+                              "value": 0.02697071433067321777,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/nombreFloat/outputs/mappingOutput/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 0.02697071433067321777,
+                  "controlMode": 0,
+                  "controlAddress": "/outValue"
+                }
+              ],
+              "niceName": "MyString",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "input": {
+                "parameters": [
+                  {
+                    "value": "/modules/signal/values/value",
+                    "controlMode": 0,
+                    "controlAddress": "/inputValue"
+                  }
+                ]
+              },
+              "filters": {
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/MyString",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": "0.02697071433067321777",
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              },
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "String",
+                            "param": {
+                              "value": "0.02697071433067321777",
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/myString/outputs/mappingOutput/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "niceName": "Rotate",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "parameters": [
+                  {
+                    "value": false,
+                    "controlMode": 0,
+                    "controlAddress": "/isValid"
+                  },
+                  {
+                    "value": 0.0,
+                    "controlMode": 0,
+                    "controlAddress": "/progress"
+                  }
+                ],
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": false,
+                        "controlMode": 0,
+                        "controlAddress": "/isValid"
+                      },
+                      {
+                        "value": "/modules/signal/values/value",
+                        "controlMode": 0,
+                        "controlAddress": "/inputValue"
+                      }
+                    ],
+                    "niceName": "From Input Value",
+                    "type": "From Input Value",
+                    "comparator": {
+                      "parameters": [
+                        {
+                          "value": ">=",
+                          "controlMode": 0,
+                          "controlAddress": "/comparisonFunction"
+                        },
+                        {
+                          "value": 0.5,
+                          "controlMode": 0,
+                          "controlAddress": "/reference"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "consequences": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/Rotate",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Boolean",
+                            "param": {
+                              "value": true,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/rotate/consequences:true/consequence/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "consequencesOff": {
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/Rotate",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": false,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Boolean",
+                            "param": {
+                              "value": false,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/rotate/consequences:false/consequence/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 1,
+                  "controlMode": 0,
+                  "controlAddress": "/outValue"
+                }
+              ],
+              "niceName": "IntSlider",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "input": {
+                "parameters": [
+                  {
+                    "value": "/modules/signal/values/value",
+                    "controlMode": 0,
+                    "controlAddress": "/inputValue"
+                  }
+                ]
+              },
+              "filters": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.53941428661346435547,
+                        "controlMode": 0,
+                        "controlAddress": "/out"
+                      }
+                    ],
+                    "niceName": "Remap",
+                    "type": "Remap",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": [
+                            0.0,
+                            1.0
+                          ],
+                          "controlMode": 0,
+                          "controlAddress": "/inputMin_Max"
+                        },
+                        {
+                          "value": [
+                            0.0,
+                            20.0
+                          ],
+                          "controlMode": 0,
+                          "controlAddress": "/targetMin_Max"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 1,
+                        "controlMode": 0,
+                        "controlAddress": "/out"
+                      }
+                    ],
+                    "niceName": "MappingFilter",
+                    "type": "Convert To Integer",
+                    "filterParams": {
+                    }
+                  }
+                ]
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/IntSlider",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": 1.0,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              },
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Float",
+                            "param": {
+                              "value": 1.0,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/intSlider/outputs/mappingOutput/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 1.34853577613830566406,
+                  "controlMode": 0,
+                  "controlAddress": "/outValue"
+                }
+              ],
+              "niceName": "Speed",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "input": {
+                "parameters": [
+                  {
+                    "value": "/modules/signal/values/value",
+                    "controlMode": 0,
+                    "controlAddress": "/inputValue"
+                  }
+                ]
+              },
+              "filters": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 1.34853577613830566406,
+                        "controlMode": 0,
+                        "controlAddress": "/out"
+                      }
+                    ],
+                    "niceName": "Remap",
+                    "type": "Remap",
+                    "filterParams": {
+                      "parameters": [
+                        {
+                          "value": [
+                            0.0,
+                            1.0
+                          ],
+                          "controlMode": 0,
+                          "controlAddress": "/inputMin_Max"
+                        },
+                        {
+                          "value": [
+                            0.0,
+                            50.0
+                          ],
+                          "controlMode": 0,
+                          "controlAddress": "/targetMin_Max"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/Speed",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": 1.34853577613830566406,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              },
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Float",
+                            "param": {
+                              "value": 1.34853577613830566406,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/speed/outputs/mappingOutput/command/arguments/_1/_1"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 0.02697071433067321777,
+                  "controlMode": 0,
+                  "controlAddress": "/outValue"
+                }
+              ],
+              "niceName": "PositionOffset",
+              "editorIsCollapsed": true,
+              "type": "Mapping",
+              "input": {
+                "parameters": [
+                  {
+                    "value": "/modules/signal/values/value",
+                    "controlMode": 0,
+                    "controlAddress": "/inputValue"
+                  }
+                ]
+              },
+              "filters": {
+              },
+              "outputs": {
+                "items": [
+                  {
+                    "niceName": "MappingOutput",
+                    "type": "BaseItem",
+                    "commandModule": "osc",
+                    "commandPath": "",
+                    "commandType": "Custom Message",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/OCF/Cube1/PositionOffset",
+                          "controlMode": 0,
+                          "controlAddress": "/address"
+                        }
+                      ],
+                      "arguments": {
+                      },
+                      "argManager": {
+                        "items": [
+                          {
+                            "parameters": [
+                              {
+                                "value": 0.0,
+                                "controlMode": 0,
+                                "controlAddress": "/_1"
+                              },
+                              {
+                                "value": false,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#1",
+                            "type": "Float",
+                            "param": {
+                              "value": 0.0,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/positionOffset/outputs/mappingOutput/command/arguments/_1/_1"
+                            }
+                          },
+                          {
+                            "parameters": [
+                              {
+                                "value": 0.02697071433067321777,
+                                "controlMode": 0,
+                                "controlAddress": "/_2"
+                              },
+                              {
+                                "value": true,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#2",
+                            "type": "Float",
+                            "param": {
+                              "value": 0.02697071433067321777,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/positionOffset/outputs/mappingOutput/command/arguments/_2/_2"
+                            }
+                          },
+                          {
+                            "parameters": [
+                              {
+                                "value": 0.0,
+                                "controlMode": 0,
+                                "controlAddress": "/_3"
+                              },
+                              {
+                                "value": false,
+                                "controlMode": 0,
+                                "controlAddress": "/useForMapping"
+                              }
+                            ],
+                            "niceName": "#3",
+                            "type": "Float",
+                            "param": {
+                              "value": 0.0,
+                              "controlMode": 0,
+                              "controlAddress": "/states/cubeBehaviour-correct/processors/positionOffset/outputs/mappingOutput/command/arguments/_3/_3"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sequenceManager": {
+    "items": [
+      {
+        "parameters": [
+          {
+            "value": 5.0,
+            "controlMode": 0,
+            "controlAddress": "/listSize"
+          },
+          {
+            "value": true,
+            "controlMode": 0,
+            "controlAddress": "/playAtLoad"
+          },
+          {
+            "value": 10.0,
+            "controlMode": 0,
+            "controlAddress": "/totalTime"
+          },
+          {
+            "value": true,
+            "controlMode": 0,
+            "controlAddress": "/loop"
+          },
+          {
+            "value": 10.0,
+            "controlMode": 0,
+            "controlAddress": "/viewEndTime"
+          }
+        ],
+        "niceName": "CubeColor",
+        "type": "BaseItem",
+        "layerManager": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 22.0,
+                  "controlMode": 0,
+                  "controlAddress": "/listSize"
+                },
+                {
+                  "value": 50,
+                  "controlMode": 0,
+                  "controlAddress": "/uiheight"
+                },
+                {
+                  "value": [
+                    0.21176470816135406494,
+                    0.21176470816135406494,
+                    0.21176470816135406494,
+                    1.0
+                  ],
+                  "controlMode": 0,
+                  "controlAddress": "/layerColor"
+                },
+                {
+                  "value": "Color (RGBA)",
+                  "controlMode": 0,
+                  "controlAddress": "/mode"
+                },
+                {
+                  "value": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  "controlMode": 0,
+                  "controlAddress": "/value"
+                }
+              ],
+              "niceName": "New Color Layer",
+              "type": "Mapping",
+              "mapping": {
+                "parameters": [
+                  {
+                    "value": [
+                      1.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ],
+                    "controlMode": 0,
+                    "controlAddress": "/outValue"
+                  }
+                ],
+                "niceName": "Mapping",
+                "type": "Mapping",
+                "input": {
+                },
+                "filters": {
+                },
+                "outputs": {
+                  "items": [
+                    {
+                      "niceName": "MappingOutput",
+                      "type": "BaseItem",
+                      "commandModule": "osc",
+                      "commandPath": "",
+                      "commandType": "Custom Message",
+                      "command": {
+                        "parameters": [
+                          {
+                            "value": "/OCF/Cube1/CubeColor",
+                            "controlMode": 0,
+                            "controlAddress": "/address"
+                          }
+                        ],
+                        "arguments": {
+                        },
+                        "argManager": {
+                          "items": [
+                            {
+                              "parameters": [
+                                {
+                                  "value": [
+                                    1.0,
+                                    0.0,
+                                    0.0,
+                                    1.0
+                                  ],
+                                  "controlMode": 0,
+                                  "controlAddress": "/_1"
+                                },
+                                {
+                                  "value": true,
+                                  "controlMode": 0,
+                                  "controlAddress": "/useForMapping"
+                                }
+                              ],
+                              "niceName": "#1",
+                              "type": "Color",
+                              "param": {
+                                "value": [
+                                  1.0,
+                                  0.0,
+                                  0.0,
+                                  1.0
+                                ],
+                                "controlMode": 0,
+                                "controlAddress": "/sequences/cubeColor/newColorLayer/mapping/outputs/mappingOutput/command/arguments/_1/_1"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "colors": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 1.99614274501800537109,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": [
+                          1.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ],
+                        "controlMode": 0,
+                        "controlAddress": "/color"
+                      }
+                    ],
+                    "niceName": "Color 1",
+                    "type": "BaseItem"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 4.34908390045166015625,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": [
+                          0.0,
+                          0.0,
+                          1.0,
+                          1.0
+                        ],
+                        "controlMode": 0,
+                        "controlAddress": "/color"
+                      }
+                    ],
+                    "niceName": "Color 3",
+                    "type": "BaseItem"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 7.959381103515625,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": [
+                          0.64313727617263793945,
+                          1.0,
+                          0.0,
+                          1.0
+                        ],
+                        "controlMode": 0,
+                        "controlAddress": "/color"
+                      }
+                    ],
+                    "niceName": "Color 2",
+                    "type": "BaseItem"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 9.0,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": [
+                          1.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ],
+                        "controlMode": 0,
+                        "controlAddress": "/color"
+                      }
+                    ],
+                    "niceName": "Color 5",
+                    "type": "BaseItem"
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.06750240921974182129,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": [
+                          1.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ],
+                        "controlMode": 0,
+                        "controlAddress": "/color"
+                      }
+                    ],
+                    "niceName": "Color 4",
+                    "type": "BaseItem"
+                  }
+                ]
+              },
+              "recorder": {
+                "parameters": [
+                  {
+                    "value": false,
+                    "controlMode": 0,
+                    "controlAddress": "/isRecording"
+                  }
+                ],
+                "editorIsCollapsed": true
+              }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 32.0,
+                  "controlMode": 0,
+                  "controlAddress": "/listSize"
+                },
+                {
+                  "value": 60,
+                  "controlMode": 0,
+                  "controlAddress": "/uiheight"
+                },
+                {
+                  "value": [
+                    0.3725490272045135498,
+                    0.61960786581039428711,
+                    0.62745100259780883789,
+                    1.0
+                  ],
+                  "controlMode": 0,
+                  "controlAddress": "/layerColor"
+                }
+              ],
+              "niceName": "New Trigger Layer",
+              "type": "Trigger",
+              "triggerManager": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.27965283393859863281,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 0.35000002384185791016,
+                        "controlMode": 0,
+                        "controlAddress": "/flagy"
+                      }
+                    ],
+                    "niceName": "SetColorWhite",
+                    "editorIsCollapsed": true,
+                    "type": "Action",
+                    "conditions": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlMode": 0,
+                          "controlAddress": "/isValid"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlMode": 0,
+                          "controlAddress": "/progress"
+                        }
+                      ]
+                    },
+                    "consequences": {
+                      "items": [
+                        {
+                          "niceName": "Consequence",
+                          "type": "BaseItem",
+                          "commandModule": "osc",
+                          "commandPath": "",
+                          "commandType": "Custom Message",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/OCF/Cube1/SetColorWhite",
+                                "controlMode": 0,
+                                "controlAddress": "/address"
+                              }
+                            ],
+                            "arguments": {
+                            },
+                            "argManager": {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.60752165317535400391,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 0.97500002384185791016,
+                        "controlMode": 0,
+                        "controlAddress": "/flagy"
+                      }
+                    ],
+                    "niceName": "SetColoreRed",
+                    "editorIsCollapsed": true,
+                    "type": "Action",
+                    "conditions": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlMode": 0,
+                          "controlAddress": "/isValid"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlMode": 0,
+                          "controlAddress": "/progress"
+                        }
+                      ]
+                    },
+                    "consequences": {
+                      "items": [
+                        {
+                          "niceName": "Consequence",
+                          "type": "BaseItem",
+                          "commandModule": "osc",
+                          "commandPath": "",
+                          "commandType": "Custom Message",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/OCF/Cube1/SetColorRed",
+                                "controlMode": 0,
+                                "controlAddress": "/address"
+                              }
+                            ],
+                            "arguments": {
+                            },
+                            "argManager": {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.79074251651763916016,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 0.0,
+                        "controlMode": 0,
+                        "controlAddress": "/flagy"
+                      }
+                    ],
+                    "niceName": "SetColorWhite 1",
+                    "editorIsCollapsed": true,
+                    "type": "Action",
+                    "conditions": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlMode": 0,
+                          "controlAddress": "/isValid"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlMode": 0,
+                          "controlAddress": "/progress"
+                        }
+                      ]
+                    },
+                    "consequences": {
+                      "items": [
+                        {
+                          "niceName": "Consequence",
+                          "type": "BaseItem",
+                          "commandModule": "osc",
+                          "commandPath": "",
+                          "commandType": "Custom Message",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/OCF/Cube1/SetColorWhite",
+                                "controlMode": 0,
+                                "controlAddress": "/address"
+                              }
+                            ],
+                            "arguments": {
+                            },
+                            "argManager": {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 1.16682732105255126953,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 1.0,
+                        "controlMode": 0,
+                        "controlAddress": "/flagy"
+                      }
+                    ],
+                    "niceName": "SetColoreRed 1",
+                    "editorIsCollapsed": true,
+                    "type": "Action",
+                    "conditions": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlMode": 0,
+                          "controlAddress": "/isValid"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlMode": 0,
+                          "controlAddress": "/progress"
+                        }
+                      ]
+                    },
+                    "consequences": {
+                      "items": [
+                        {
+                          "niceName": "Consequence",
+                          "type": "BaseItem",
+                          "commandModule": "osc",
+                          "commandPath": "",
+                          "commandType": "Custom Message",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/OCF/Cube1/SetColorRed",
+                                "controlMode": 0,
+                                "controlAddress": "/address"
+                              }
+                            ],
+                            "arguments": {
+                            },
+                            "argManager": {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 1.64898753166198730469,
+                        "controlMode": 0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 0.55000001192092895508,
+                        "controlMode": 0,
+                        "controlAddress": "/flagy"
+                      }
+                    ],
+                    "niceName": "SetColorWhite 2",
+                    "editorIsCollapsed": true,
+                    "type": "Action",
+                    "conditions": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlMode": 0,
+                          "controlAddress": "/isValid"
+                        },
+                        {
+                          "value": 0.0,
+                          "controlMode": 0,
+                          "controlAddress": "/progress"
+                        }
+                      ]
+                    },
+                    "consequences": {
+                      "items": [
+                        {
+                          "niceName": "Consequence",
+                          "type": "BaseItem",
+                          "commandModule": "osc",
+                          "commandPath": "",
+                          "commandType": "Custom Message",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/OCF/Cube1/SetColorWhite",
+                                "controlMode": 0,
+                                "controlAddress": "/address"
+                              }
+                            ],
+                            "arguments": {
+                            },
+                            "argManager": {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "cueManager": {
+        },
+        "editing": true
+      }
+    ]
+  }
+}

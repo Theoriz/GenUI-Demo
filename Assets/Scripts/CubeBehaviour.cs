@@ -15,10 +15,32 @@ public class CubeBehaviour : MonoBehaviour {
     public int IntSlider;
 
     public float Speed;
-    
-    public Vector3 PositionOffset;
 
-    public Color CubeColor;
+    private Vector3 _positionOffset;
+    public Vector3 PositionOffset {
+        get
+        {
+            return _positionOffset;
+        }
+        set
+        {
+            _positionOffset = value;
+            transform.localPosition = startPosition + _positionOffset;
+        }
+    }
+
+    private Color _color;
+    public Color CubeColor {
+        get
+        {
+            return _color;
+        }
+        set
+        {
+            _color = value;
+            GetComponent<Renderer>().material.color = _color;
+        }
+    }
 
     private Vector3 startPosition;
 
@@ -26,7 +48,6 @@ public class CubeBehaviour : MonoBehaviour {
     public void SetColor(Color col)
     {
         CubeColor = col;
-        GetComponent<Renderer>().material.color = CubeColor;
     }
 
     private void Start()
@@ -34,11 +55,9 @@ public class CubeBehaviour : MonoBehaviour {
         startPosition = transform.localPosition;
     }
 
-    // Update is called once per frame
     void Update () {
         NombreFloat = Mathf.Sin(Time.time);
-        transform.localPosition = startPosition  + PositionOffset;
-        SetColor(CubeColor);
+
         if (Rotate)
             transform.Rotate(new Vector3(0, 1, 0) * Speed);
 	}
