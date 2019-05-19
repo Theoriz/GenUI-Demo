@@ -5,6 +5,10 @@ using UnityEngine;
 public class CubeBehaviourControllable : Controllable
 {
     [Header("Exposed properties")]
+
+    [OSCProperty]
+    public int Property;
+
     [OSCProperty]
     public int NombreInt;
 

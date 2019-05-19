@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class CubeBehaviour : MonoBehaviour {
 
+    private int _property = -1;
+    public int Property
+    {
+        get
+        {
+            return _property;
+        }
+
+        set
+        {
+            _property = value;
+        }
+    }
+
     public int NombreInt;
 
     public float NombreFloat;
