@@ -47,6 +47,7 @@ public class CubeBehaviour : MonoBehaviour {
     public Color CubeColor {
         get
         {
+            _color = GetComponent<Renderer>().material.color;
             return _color;
         }
         set
