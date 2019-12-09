@@ -9,6 +9,9 @@ public class CubeBehaviourControllable : Controllable
     [OSCProperty]
     public int Property;
 
+    [OSCProperty(enumName ="CustomEnum")]
+    public CustomEnum customEnum;
+
     [OSCProperty]
     public int NombreInt;
 
@@ -36,10 +39,10 @@ public class CubeBehaviourControllable : Controllable
     public Color CubeColor;
 
     [OSCMethod]
-    public void SetColor(Color col)
-    {
-        ((CubeBehaviour)TargetScript).SetColor(col);
-    }
+    public void SetColorBlue() {}
+
+    [OSCMethod]
+    public void SetColor(Color col)  { }
 
     [OSCMethod]
     public void SetColorRed()

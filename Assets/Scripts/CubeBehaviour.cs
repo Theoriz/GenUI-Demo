@@ -1,6 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+public enum CustomEnum
+{
+    Value1, Value2, Value3
+}
 
 public class CubeBehaviour : MonoBehaviour {
 
@@ -17,6 +23,8 @@ public class CubeBehaviour : MonoBehaviour {
             _property = value;
         }
     }
+
+    public CustomEnum customEnum;
 
     public int NombreInt;
 
@@ -59,13 +67,17 @@ public class CubeBehaviour : MonoBehaviour {
 
     private Vector3 startPosition;
 
+    public void SetColorBlue()
+    {
+        CubeColor = Color.blue;
+    }
 
     public void SetColor(Color col)
     {
         CubeColor = col;
     }
 
-    private void Start()
+    private void Awake()
     {
         startPosition = transform.localPosition;
     }
