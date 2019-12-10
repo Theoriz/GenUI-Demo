@@ -10,8 +10,8 @@ public enum CustomEnum
 
 public class CubeBehaviour : MonoBehaviour {
 
-    private int _property = -1;
-    public int Property
+    private float _property = -1;
+    public float Property
     {
         get
         {

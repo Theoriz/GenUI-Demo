@@ -7,7 +7,7 @@ public class CubeBehaviourControllable : Controllable
     [Header("Exposed properties")]
 
     [OSCProperty]
-    public int Property;
+    public float Property;
 
     [OSCProperty(enumName ="CustomEnum")]
     public CustomEnum customEnum;
